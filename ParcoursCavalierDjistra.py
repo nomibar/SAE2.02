@@ -1,5 +1,4 @@
 def trouver_parcours_hamiltonien(case_depart):
-    # Initialisation
     vient_de = {}  # Dictionnaire associant chaque case à sa case parente
     a_explorer = [case_depart]  # Liste des cases à explorer
     marquees = set()  # Ensemble des cases déjà visitées
@@ -10,6 +9,7 @@ def trouver_parcours_hamiltonien(case_depart):
         marquees.add(courant)
 
         # Vérifier si toutes les cases ont été visitées (parcours hamiltonien trouvé)
+        # Création de chemin pour renvoyer le parcours final
         if len(marquees) == 64:
             chemin = [courant]
             while courant in vient_de:
@@ -27,6 +27,7 @@ def trouver_parcours_hamiltonien(case_depart):
     # Aucun parcours hamiltonien trouvé
     return None
 
+# Trouver les cases accesibles et les renvoyer dans un tableau
 def obtenir_cases_accessibles(case):
 
     x, y = case
@@ -41,6 +42,7 @@ def obtenir_cases_accessibles(case):
 
     return cases_accessibles
 
+# Main
 def trouver_parcours(x, y):
     case_depart = (x, y)
 
